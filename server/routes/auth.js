@@ -60,6 +60,7 @@ router.post("/signup", async (req, res) => {
   }
 });
 
+
 //Route2: login: authenticate
 router.post(
   "/login",

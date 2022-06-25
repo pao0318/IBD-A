@@ -30,7 +30,7 @@ export default function Navbar(props) {
               className="navbar-brand"
               to={userrole === "patient" ? "/" : "/homedoctor"}
             >
-              Exelligence
+              Medibles
             </Link>
             <button
               className="navbar-toggler"
@@ -69,7 +69,7 @@ export default function Navbar(props) {
                       }`}
                       to="/excercise"
                     >
-                      Excercise
+                      Exercise
                     </Link>
                   </li>
 
@@ -92,6 +92,14 @@ export default function Navbar(props) {
                       FoodTracker
                     </Link>
 
+                    <Link
+                      className={`nav-link ${
+                        location.pathname === "/uploadreport" ? "active" : ""
+                      }`}
+                      to="/uploadreport "
+                    >
+                      Upload Report
+                    </Link>
 
         
                   <li className="nav-item">
@@ -101,7 +109,7 @@ export default function Navbar(props) {
                       }`}
                       to="/report"
                     >
-                      Report
+                      Exercise Report
                     </Link>
                   </li>
                   <li className="nav-item">

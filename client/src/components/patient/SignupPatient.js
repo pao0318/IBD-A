@@ -273,7 +273,7 @@ export const SignupPatient = (props) => {
                   </div>
                   <div className="col-lg-6 d-flex align-items-center gradient-custom-2">
                     <div className="text-white px-3 py-4 p-md-5 mx-md-4">
-                      <h4 className="mb-4">Medibles Paltform</h4>
+                      <h4 className="mb-4">Medibles Platform</h4>
                       <p className="small mb-0">
                         Get digital prescriptions, monitoring your progress with
                         advanced AI features, being a part of patients -

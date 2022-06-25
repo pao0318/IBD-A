@@ -193,7 +193,7 @@ export default function Home(props) {
       <ChatBot steps={[
         {
           id: '1',
-          message: 'Hi! Do you need some help?',
+          message: 'Hi! Can we ask some questions for today?',
           trigger: '7',
         },
         {
@@ -240,7 +240,7 @@ export default function Home(props) {
         },
         {
           id: '8',
-          message: 'Awesome! Hope you are enjoying Project-Medible',
+          message: 'Awesome! Thankyou for your time. ',
           end: true,
         },
         {
@@ -255,38 +255,81 @@ export default function Home(props) {
         },
         {
           id: '12',
-          message: 'What do you want to know',
+          message: 'Where do you feel the pain?',
           trigger: '13'
         },
         {
           id: '13',
           options: [
-            { value: 1, label: 'BMI', trigger: '2' },
-            { value: 2, label: 'Medibles Features', trigger: '14' },
+            { value: 1, label: 'Above navel', trigger: '14' },
+            { value: 2, label: 'Below navel', trigger: '14' },
+            { value: 3, label: 'To right of navel', trigger: '14' },
+            { value: 4, label: ' To left of navel', trigger: '14' },
+            { value: 5, label: 'I can’t pin point', trigger: '14' },
           ],
         },
         {
           id: '14',
-          message: 'What do you want to know',
+          message: 'Since long the pain has been?',
           trigger: '15'
         },
         {
           id: '15',
+          message: 'Please mention the duration in days (days)',
+          trigger: 'days',
+        },
+
+        {
+          id: 'days',
+          user: true,
+          trigger:'end'
+          
+        },
+        {
+          id: 'end',
+          message: 'How does the pain feel?',
+          trigger:'painoptions'
+       
+         
+        },
+
+        {
+          id:'painoptions',
           options: [
-            { value: 1, label: 'Book doctor', trigger: '17' },
-            { value: 2, label: 'Excercise Feature', trigger: '16' },
+            { value: 1, label: 'Sharp, comes, increases then decreases in intensity', trigger: '16' },
+            { value: 2, label: ' Tearing type pain', trigger: '16' },
+            { value: 3, label: 'Burning sensation', trigger: '16' },
+            { value: 4, label: ' Sharp but constant', trigger: '16' },
+            { value: 5, label: 'Dull, low intensity pain', trigger: '16' },
           ],
+
         },
         {
           id: '16',
-          message: 'Go to your excercise tab and all the excercises given to you are shown, Click on the given excercise to perform it and your report will be generated accordingly.',
-          trigger: '8'
+          message: 'Does it spread anywhere?',
+          trigger: '17'
         },
         {
           id: '17',
-          message: 'In your Home Page, You can see all the doctors registered in our platform. If you want to book a doctor, click on their profile and the you can send them a request',
+          options: [
+            { value: 1, label: 'To the shoulders', trigger: '18' },
+            { value: 2, label: ' Right shoulder only', trigger: '18' },
+            { value: 3, label: 'Left shoulder only', trigger: '18' },
+            { value: 4, label: 'To the back', trigger: '18' },
+            { value: 5, label: 'To the throat', trigger: '18' },
+            { value: 6, label: 'Not Sure', trigger: '18' },
+          ],
           trigger: '8'
         },
+        {
+          id: '18',
+          message: 'Thats all for now',
+          trigger: '8'
+        },
+
+
+
+
       ]}
         floating={true} />
     </div>
