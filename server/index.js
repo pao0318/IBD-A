@@ -22,6 +22,7 @@ app.use("/api/reviews", require("./routes/review"));
 app.use("/api/prescription", require("./routes/prescription"));
 app.use("/api/excercise", require("./routes/excercise"));
 app.use("/api/shopping", require("./routes/shopping"));
+app.use("/api/bloodreport", require("./routes/bloodreport"));
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);

@@ -37,12 +37,6 @@ const UserSchema = new Schema({
   img: {
     type: String,
   },
-  blood: {
-    type: String,
-  },
-  colonoscopy: {
-    type: String,
-  },
   disease: {
     type: String,
   },
