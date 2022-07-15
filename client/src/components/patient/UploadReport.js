@@ -110,7 +110,6 @@ import {
                           >
                             Upload Image
                           </button>
-
                           <button
                             type="button"
                             className="btn btn-success mt-2"

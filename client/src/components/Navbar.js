@@ -62,16 +62,7 @@ export default function Navbar(props) {
                     </Link>
                   </li>
 
-                  <li className="nav-item">
-                    <Link
-                      className={`nav-link ${
-                        location.pathname === "/excercise" ? "active" : ""
-                      }`}
-                      to="/excercise"
-                    >
-                      Exercise
-                    </Link>
-                  </li>
+        
 
                   <Link
                       className={`nav-link ${
@@ -92,26 +83,6 @@ export default function Navbar(props) {
                       FoodTracker
                     </Link>
 
-                    <Link
-                      className={`nav-link ${
-                        location.pathname === "/uploadreport" ? "active" : ""
-                      }`}
-                      to="/uploadreport "
-                    >
-                      Upload Report
-                    </Link>
-
-        
-                  <li className="nav-item">
-                    <Link
-                      className={`nav-link ${
-                        location.pathname === "/report" ? "active" : ""
-                      }`}
-                      to="/report"
-                    >
-                      Exercise Report
-                    </Link>
-                  </li>
                   <li className="nav-item">
                     <Link
                       className={`nav-link ${
@@ -155,16 +126,7 @@ export default function Navbar(props) {
                       About
                     </Link>
                   </li>
-                  <li className="nav-item">
-                    <Link
-                      className={`nav-link ${
-                        location.pathname === "/reportDoctor" ? "active" : ""
-                      }`}
-                      to="/reportDoctor"
-                    >
-                      Report
-                    </Link>
-                  </li>
+
                 </ul>
                 <button className="btn btn-primary mx-1" onClick={handleLogout}>
                   logout

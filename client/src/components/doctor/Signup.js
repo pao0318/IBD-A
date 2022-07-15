@@ -29,12 +29,12 @@ export const Signup = (props) => {
   async function uploadImage() {
     const data = new FormData();
     data.append("file", image);
-    data.append("upload_preset", "jqywmvza");
-    data.append("cloud_name", "rapidhack");
-    data.append("API_KEY", "247546958156261");
+    data.append("upload_preset", "yfg4rfog");
+    data.append("cloud_name", "dfd7lde7f");
+    data.append("API_KEY", "862782576248162");
 
     const resp = await fetch(
-      "  https://api.cloudinary.com/v1_1/rapidhack/image/upload",
+      "  https://api.cloudinary.com/v1_1/dfd7lde7f/image/upload",
       {
         method: "post",
         body: data,

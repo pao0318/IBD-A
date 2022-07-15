@@ -8,7 +8,6 @@ export default function AboutPatient(props) {
   const [prescription, setPrescription] = useState([]);
   const [disease, setDisease] = useState("");
   const [saveDisplay, setsaveDisplay] = useState("");
-  const [excercise, setExcercise] = useState([]);
 
   useEffect(() => {
     if (!localStorage.getItem("token")) {
@@ -20,7 +19,6 @@ export default function AboutPatient(props) {
     getUser();
     getBooking();
     getPrescription();
-    getExcercise();
     // eslint-disable-next-line
   }, []);
 
@@ -115,19 +113,6 @@ export default function AboutPatient(props) {
     );
     const data = await response.json();
     setPrescription(data);
-  }
-  async function getExcercise() {
-    const response = await fetch(
-      `http://localhost:5000/api/excercise/fetchexcercisepatient`,
-      {
-        method: "GET",
-        headers: {
-          "auth-token": localStorage.getItem("token"),
-        },
-      }
-    );
-    const data = await response.json();
-    setExcercise(data);
   }
 
   const updateDisease = async () => {
@@ -372,84 +357,7 @@ export default function AboutPatient(props) {
           </div>
         ))}
       </div>
-      <div className="row mt-4">
-        <h2>Post-care Activities</h2>
-
-        <h4 className="mt-2">
-          {excercise.length === 0 && "No Activities Assigned Yet"}
-        </h4>
-        {excercise.map((activity, index) => (
-          <div className="w3-half">
-            <div className="w3-container w3-card w3-white w3-margin-bottom">
-              <div className="row">
-                <div key={index} className="w3-container">
-                  <div className="card-body">
-                    <div className="row">
-                      <div className="col-8">
-                        <h4>Activity by {activity.doctorName}</h4>{" "}
-                      </div>
-                      <div className="col-4 float-end">
-                        <button
-                          className={
-                            activity.completed
-                              ? "btn btn-success disabled"
-                              : "btn btn-success "
-                          }
-                          onClick={(e) => {
-                            completeExcercise(activity._id, e);
-                          }}
-                        >
-                          Completed
-                        </button>
-                      </div>
-                    </div>
-                    <div class="table-responsive">
-                      <table className="table">
-                        <thead>
-                          <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Exercise Name</th>
-                            <th scope="col">Severity</th>
-                            <th scope="col">Per Activity Time</th>
-                            <th scope="col">Total Times</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {activity.excercises.map((activity, index) => (
-                            <tr>
-                              <th scope="row">{index + 1}</th>
-                              <td>{activity.name}</td>
-                              <td>{activity.severity}</td>
-                              <td>{activity.perActivityTime} seconds</td>
-                              <td>{activity.total}</td>
-                            </tr>
-                          ))}
-                        </tbody>
-                      </table>
-                      <h6>
-                        <b>Starting Date: </b>
-                        {activity.startDate}
-                      </h6>
-                    </div>
-                    <div className="row">
-                      <div className="col-8">
-                        {activity.note ? (
-                          <>
-                            <b className="d-block">Special Instruction</b>
-                            {activity.note}
-                          </>
-                        ) : (
-                          <></>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
+    
     </div>
   );
 }

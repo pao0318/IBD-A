@@ -6,8 +6,6 @@ const connectToMongo = () => {
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
-      useCreateIndex: true,
-      useFindAndModify: false, 
     },
     () => {
       console.log("connection success to Mongo");
