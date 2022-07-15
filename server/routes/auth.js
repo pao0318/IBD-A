@@ -17,11 +17,10 @@ const JWT_SECRET = "secretkeyforsession";
 router.post("/signup", async (req, res) => {
   let success = false;
   try {
-    //check whteher user with this email exists
+    //check whether user with this email exists
     let user = await User.findOne({ email: req.body.email });
     if (user) {
-      return res.status(400).send({
-        success,
+      return res.status(200).send({
         error: "Please give unique email value,  as email already registered",
       });
     }
@@ -29,6 +28,8 @@ router.post("/signup", async (req, res) => {
     var salt = await bcrypt.genSalt(10);
     console.log(req.body.password);
     var secPass = await bcrypt.hash(req.body.password, salt);
+
+
     //if no user exists, then create new user
     user = await User.create({
       name: req.body.name,
@@ -54,7 +55,6 @@ router.post("/signup", async (req, res) => {
   } catch (error) {
     console.log(error);
     res.status(500).send({
-      success,
       error: error.message,
     });
   }
